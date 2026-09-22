@@ -84,7 +84,7 @@ export default function DHDWebsite() {
   ];
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-white">
+    <div className="min-h-screen bg-white text-zinc-950">
       <header className="sticky top-0 z-50 border-b border-white/10 bg-white/95 text-zinc-950 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <button onClick={() => setPage("home")} className="flex items-center gap-3 text-left">
@@ -117,7 +117,7 @@ export default function DHDWebsite() {
         {page === "contact" && <Contact />}
       </main>
 
-      <footer className="border-t border-white/10 px-6 py-8 text-center text-sm text-zinc-400">
+     <footer className="border-t border-zinc-200 bg-white px-6 py-8 text-center text-sm text-zinc-500">
         © 2026 DHD010 B.V. • KvK: 96126450 • BTW: NL867479796B01
       </footer>
     </div>
@@ -172,17 +172,19 @@ function Home({ setPage, services }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
-        <div className="grid gap-6 md:grid-cols-3">
-          {services.map((service) => (
-            <div key={service.title} className="rounded-3xl border border-white/10 bg-white/[0.06] p-7 shadow-xl">
-              <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/15 text-2xl text-purple-300">{service.icon}</div>
-              <h3 className="text-xl font-bold">{service.title}</h3>
-              <p className="mt-3 leading-7 text-zinc-300">{service.text}</p>
-            </div>
-          ))}
+      <section className="bg-white px-6 py-20 text-zinc-950">
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-6 md:grid-cols-3">
+      {services.map((service) => (
+        <div key={service.title} className="rounded-3xl border border-zinc-200 bg-zinc-50 p-7 shadow-sm">
+          <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-100 text-2xl font-bold text-purple-700">{service.icon}</div>
+          <h3 className="text-xl font-bold text-zinc-950">{service.title}</h3>
+          <p className="mt-3 leading-7 text-zinc-600">{service.text}</p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section className="bg-white py-20 text-zinc-950">
         <div className="mx-auto max-w-7xl px-6">
@@ -198,15 +200,15 @@ function Home({ setPage, services }) {
 
           <div className="mt-10 flex flex-wrap items-center gap-4 rounded-3xl border border-zinc-200 bg-zinc-50 p-6">
             <div className="rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-zinc-200">
-              <p className="text-sm font-bold uppercase tracking-wide text-zinc-500"><span className="text-purple-600">✓</span> SNA / NEN gecertificeerd</p>
+             <p className="text-sm font-black uppercase tracking-wide text-zinc-800"><span className="text-purple-600">✓</span> SNA / NEN gecertificeerd</p>
             </div>
 
             <div className="rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-zinc-200">
-              <p className="text-sm font-bold uppercase tracking-wide text-zinc-500"><span className="text-purple-600">✓</span> Aangesloten bij NBBU</p>
+              <p className="text-sm font-black uppercase tracking-wide text-zinc-800"><span className="text-purple-600">✓</span> Aangesloten bij NBBU</p>
             </div>
 
             <div className="rounded-2xl bg-white px-5 py-4 shadow-sm ring-1 ring-zinc-200">
-              <p className="text-sm font-bold uppercase tracking-wide text-zinc-500"><span className="text-purple-600">✓</span> Werken volgens cao & regelgeving</p>
+              <p className="text-sm font-black uppercase tracking-wide text-zinc-800"><span className="text-purple-600">✓</span> Werken volgens cao & regelgeving</p>
             </div>
           </div>
 
@@ -238,10 +240,10 @@ function Home({ setPage, services }) {
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-6 py-20">
+     <section className="mx-auto max-w-7xl bg-white px-6 py-20 text-zinc-950">
         <div className="grid items-center gap-12 md:grid-cols-2">
           <div>
-            <p className="font-bold text-purple-400">Onze werkwijze</p>
+            <p className="font-black text-purple-600">Onze werkwijze</p>
             <h2 className="mt-3 text-4xl font-black md:text-5xl">
               Hoe wij te werk gaan.
             </h2>
@@ -251,7 +253,7 @@ function Home({ setPage, services }) {
                 <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-purple-600 font-black text-white">1</div>
                 <div>
                   <h3 className="text-xl font-black">Kennismaking</h3>
-                  <p className="mt-2 leading-7 text-zinc-300">
+                  <p className="mt-2 leading-7 text-zinc-700">
                     Wij bespreken de wensen, werkzaamheden en verwachtingen.
                   </p>
                 </div>
@@ -261,7 +263,7 @@ function Home({ setPage, services }) {
                 <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-purple-600 font-black text-white">2</div>
                 <div>
                   <h3 className="text-xl font-black">Selectie & planning</h3>
-                  <p className="mt-2 leading-7 text-zinc-300">
+                  <p className="mt-2 leading-7 text-zinc-700">
                     Wij zoeken geschikte medewerkers die passen bij de werkvloer en planning.
                   </p>
                 </div>
@@ -271,7 +273,7 @@ function Home({ setPage, services }) {
                 <div className="flex h-12 w-12 flex-none items-center justify-center rounded-full bg-purple-600 font-black text-white">3</div>
                 <div>
                   <h3 className="text-xl font-black">Begeleiding</h3>
-                  <p className="mt-2 leading-7 text-zinc-300">
+                  <p className="mt-2 leading-7 text-zinc-700">
                     Tijdens het traject blijven wij betrokken en bereikbaar voor zowel opdrachtgever als medewerker.
                   </p>
                 </div>
@@ -280,9 +282,9 @@ function Home({ setPage, services }) {
           </div>
 
           <div className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-10 shadow-2xl">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-purple-400">
-              Actief in
-            </p>
+            <p className="font-black uppercase tracking-[0.3em] text-purple-600">
+  ACTIEF IN
+</p>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               {[
@@ -307,10 +309,11 @@ function Home({ setPage, services }) {
 
 function Diensten({ services }) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <section className="min-h-screen bg-white px-6 py-20 text-zinc-950">
+      <div className="mx-auto max-w-7xl">
       <p className="font-bold text-purple-400">Onze diensten</p>
       <h2 className="mt-3 text-4xl font-black md:text-5xl">Personeel dat past bij de praktijk.</h2>
-      <p className="mt-5 max-w-2xl leading-8 text-zinc-300">Wij ondersteunen opdrachtgevers in verschillende sectoren met flexibel personeel, operationele ondersteuning en praktische oplossingen.</p>
+      <p className="mt-5 max-w-2xl leading-8 text-zinc-600">Wij ondersteunen opdrachtgevers in verschillende sectoren met flexibel personeel, operationele ondersteuning en praktische oplossingen.</p>
       <div className="mt-10 flex flex-wrap items-center gap-4 rounded-3xl border border-white/10 bg-white/[0.04] p-6">
         <div className="flex items-center gap-3 rounded-2xl bg-white px-5 py-4 text-zinc-950 shadow-sm">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-100 text-sm font-black text-purple-700">
@@ -335,14 +338,17 @@ function Diensten({ services }) {
 
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {services.map((service) => (
-          <div key={service.title} className="rounded-3xl border border-white/10 bg-white/[0.06] p-8 shadow-xl">
-            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-600/15 text-2xl text-purple-300">{service.icon}</div>
-            <h3 className="text-2xl font-black">{service.title}</h3>
-            <p className="mt-4 leading-7 text-zinc-300">{service.text}</p>
-          </div>
-        ))}
+          <div key={service.title} className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 shadow-sm">
+  <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-100 text-2xl text-purple-600">
+    {service.icon}
+  </div>
+  <h3 className="text-2xl font-black">{service.title}</h3>
+  <p className="mt-4 leading-7 text-zinc-600">{service.text}</p>
+</div>
+         ))}
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
 
@@ -397,9 +403,10 @@ function Werkgevers({ strengths, setPage }) {
 
 function Werkzoekenden({ vacatures, setPage }) {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <section className="min-h-screen bg-white text-zinc-950">
+  <div className="mx-auto max-w-7xl px-6 py-20">
       <div className="mb-12 max-w-3xl">
-        <p className="font-bold text-purple-400">Werkzoekenden</p>
+        <p className="font-bold text-purple-600">Werkzoekenden</p>
         <h2 className="mt-3 text-4xl font-black md:text-5xl">Zoek je werk? Wij helpen je snel op weg.</h2>
         <p className="mt-5 leading-8 text-zinc-300">
           Bekijk onze functies in logistiek, transport en magazijnwerk. Staat jouw functie erbij? Solliciteer direct en wij nemen contact met je op.
@@ -408,20 +415,20 @@ function Werkzoekenden({ vacatures, setPage }) {
 
       <div className="grid gap-6 md:grid-cols-2">
         {vacatures.map((job) => (
-          <div key={job.title} className="rounded-3xl border border-white/10 bg-white/[0.06] p-8 shadow-xl">
+          <div key={job.title} className="rounded-3xl border border-zinc-200 bg-zinc-50 p-8 shadow-sm">
             <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div>
                 <h3 className="text-2xl font-black">{job.title}</h3>
                 <p className="mt-2 text-zinc-400">{job.location}</p>
               </div>
-              <div className="rounded-full bg-purple-600/20 px-4 py-2 text-sm font-bold text-purple-300">
-                {job.hours}
-              </div>
+              <div className="rounded-full bg-purple-100 px-4 py-2 text-sm font-bold text-purple-700">
+  {job.hours}
+</div>
             </div>
-            <p className="mt-6 leading-7 text-zinc-300">{job.description}</p>
+            <p className="mt-6 leading-7 text-zinc-600">{job.description}</p>
             <div className="mt-6">
               <p className="font-bold">Benodigdheden:</p>
-              <ul className="mt-3 space-y-2 text-zinc-300">
+              <ul className="mt-3 space-y-2 text-zinc-600">
                 {job.requirements.map((req) => <li key={req}>• {req}</li>)}
               </ul>
             </div>
@@ -432,50 +439,72 @@ function Werkzoekenden({ vacatures, setPage }) {
               </button>
             </div>
           </div>
-        ))}
-      </div>
-    </section>
-  );
+       ))}
+    </div>
+  </div>
+</section>
+);
 }
 
 function Contact() {
   return (
-    <section className="mx-auto max-w-7xl px-6 py-20">
+    <section className="min-h-screen bg-white text-zinc-950">
+  <div className="mx-auto max-w-7xl px-6 py-20">
       <div className="grid gap-10 md:grid-cols-2">
         <div>
-          <p className="font-bold text-purple-400">Contact</p>
+          <p className="font-bold text-purple-600">Contact</p>
           <h2 className="mt-3 text-3xl font-black md:text-5xl">Vertel ons wat u nodig heeft.</h2>
-          <p className="mt-4 leading-8 text-zinc-300">
+          <p className="mt-4 leading-8 text-zinc-600">
             Laat uw gegevens achter of neem direct contact op. Wij reageren snel en denken praktisch met u mee.
           </p>
-          <div className="mt-8 space-y-4 text-zinc-300">
+          <div className="mt-8 space-y-4 text-zinc-600">
             <ContactRow icon="☎" text="contact@dhd010.nl" />
             <ContactRow icon="⌖" text="Van Deventerstraat 15 B, 3029AW Rotterdam, Nederland" />
             <ContactRow icon="▣" text="DHD010 B.V." />
             <ContactRow icon="✓" text="SNA / NEN gecertificeerd" />
             <ContactRow icon="◆" text="Aangesloten bij brancheorganisatie NBBU" />
-            <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm leading-7 text-zinc-400">
-              <p><span className="font-bold text-white">KvK:</span> 96126450</p>
-              <p><span className="font-bold text-white">BTW:</span> NL867479796B01</p>
-            </div>
+
           </div>
         </div>
-        <form className="rounded-[2rem] border border-white/10 bg-white/[0.06] p-6">
-          <div className="grid gap-4">
-            <input className="rounded-2xl border border-white/10 bg-zinc-900 px-4 py-4 outline-none placeholder:text-zinc-500" placeholder="Naam" />
-            <input className="rounded-2xl border border-white/10 bg-zinc-900 px-4 py-4 outline-none placeholder:text-zinc-500" placeholder="E-mailadres" />
-            <input className="rounded-2xl border border-white/10 bg-zinc-900 px-4 py-4 outline-none placeholder:text-zinc-500" placeholder="Telefoonnummer" />
-            <select className="rounded-2xl border border-white/10 bg-zinc-900 px-4 py-4 outline-none text-zinc-300">
-              <option>Ik zoek personeel</option>
-              <option>Ik zoek werk</option>
-              <option>Algemene vraag</option>
-            </select>
-            <textarea className="min-h-32 rounded-2xl border border-white/10 bg-zinc-900 px-4 py-4 outline-none placeholder:text-zinc-500" placeholder="Bericht" />
-            <button type="button" className="rounded-full bg-purple-600 px-7 py-4 font-bold transition hover:bg-purple-500">Versturen</button>
-          </div>
-        </form>
+       <form className="rounded-[2rem] border border-zinc-200 bg-zinc-50 p-6">
+  <div className="grid gap-4">
+    <input
+      className="rounded-2xl border border-zinc-300 bg-white px-4 py-4 text-zinc-950 outline-none placeholder:text-zinc-400 focus:border-purple-500"
+      placeholder="Naam"
+    />
+
+    <input
+      className="rounded-2xl border border-zinc-300 bg-white px-4 py-4 text-zinc-950 outline-none placeholder:text-zinc-400 focus:border-purple-500"
+      placeholder="E-mailadres"
+    />
+
+    <input
+      className="rounded-2xl border border-zinc-300 bg-white px-4 py-4 text-zinc-950 outline-none placeholder:text-zinc-400 focus:border-purple-500"
+      placeholder="Telefoonnummer"
+    />
+
+    <select className="rounded-2xl border border-zinc-300 bg-white px-4 py-4 text-zinc-950 outline-none focus:border-purple-500">
+      <option>Ik zoek personeel</option>
+      <option>Ik zoek werk</option>
+      <option>Algemene vraag</option>
+    </select>
+
+    <textarea
+      className="min-h-32 rounded-2xl border border-zinc-300 bg-white px-4 py-4 text-zinc-950 outline-none placeholder:text-zinc-400 focus:border-purple-500"
+      placeholder="Bericht"
+    />
+
+    <button
+      type="button"
+      className="rounded-full bg-purple-600 px-7 py-4 font-bold text-white transition hover:bg-purple-500"
+    >
+      Versturen
+    </button>
+  </div>
+</form>
       </div>
-    </section>
+    </div>
+  </section>
   );
 }
 
@@ -491,7 +520,7 @@ function Stat({ number, label }) {
 function ContactRow({ icon, text }) {
   return (
     <div className="flex items-center gap-3">
-      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-600/15 text-purple-300">{icon}</div>
+      <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-purple-100 font-bold text-purple-700">{icon}</div>
       <span>{text}</span>
     </div>
   );
