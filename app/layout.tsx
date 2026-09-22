@@ -12,9 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "DHD010 B.V. | Uitzendbureau Rotterdam",
   description: "DHD010 B.V. helpt bedrijven aan betrouwbaar personeel.",
+  verification: {
+    google: "f75HfAyPAMkUsvpDTHTPLWy04cxye5CQS_p_Pc-xOU4",
+  },
   icons: {
     icon: "/favicon.ico",
   },
